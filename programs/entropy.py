@@ -32,7 +32,7 @@ for engine in engines:
 	for l in lang:
 		for doc in corpus_ref.part_lang_[l]:
 			txt = doc.text_
-			path = doc.path_.split('/')[-1]
+			path = doc.path_.replace('/home/jbtanguy/These/Corpus/Daniel/Extractions_corpus_daniel/corpora/Corpus_daniel_v2.1/','').replace('cleaned/', '').replace('reference/', '').replace(engine+'/', '')
 			H = entropy(txt, LMs[l], nmin, nmax)
 			entropies[path] = H
 	file = open('./../entropies/entropies_'+engine+'.json', 'w')
