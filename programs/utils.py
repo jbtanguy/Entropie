@@ -38,7 +38,6 @@ def entropy(text, LM, nmin=4, nmax=4):
 			if previous_letters in LM.keys():
 				if current_letter in LM[previous_letters].keys():
 					proba = LM[previous_letters][current_letter]
-					entropy += proba * math.log(proba, 10)
+					entropy += proba * math.log(1/proba, 2)
 			i += 1
-	entropy = - entropy
 	return entropy
